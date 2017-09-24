@@ -13,7 +13,7 @@ public class Tester {
 		System.out.println(prime.euclidNunber(0));
 		prime.euclidNumberList(5);
 		Loops test = new Loops();
-		test.loops();
+		test.loops(10, 10);
 	} 
 
 }
