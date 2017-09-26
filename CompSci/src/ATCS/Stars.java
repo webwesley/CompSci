@@ -1,3 +1,5 @@
+//displays a pyramid of stars with n rows
+
 package ATCS;
 
 public class Stars {

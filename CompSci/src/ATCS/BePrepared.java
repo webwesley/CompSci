@@ -1,3 +1,6 @@
+//calculates the total for an order of bp copies of "Be Prepared" and nb
+//copies of "Next Best", taking the above specials into account.
+
 package ATCS;
 
 public class BePrepared {
