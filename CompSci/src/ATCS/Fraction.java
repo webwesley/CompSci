@@ -29,7 +29,7 @@ public class Fraction {
 				}
 			}
 
-		return(numBest + "/"  + demBest);
+		return((int) numBest + "/"  + (int) demBest);
 
 	}
 
@@ -51,7 +51,7 @@ public String below() {
 				}
 			}
 
-		return(numBest + "/"  + demBest);
+		return((int) numBest + "/"  + (int) demBest);
 
 	}
 }
