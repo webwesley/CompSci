@@ -1,5 +1,8 @@
 package ATCS;
 
+//a program that finds the two such fractions that are closest to 17 / 76:
+//one from above and one from below.
+
 public class Fraction {
 	double numTest;
 	double demTest;
