@@ -6,6 +6,7 @@ public class TesterACTS {
 		CoinCombos coins = new CoinCombos();
 		coins.allCoins(25);
 		System.out.println();
+		
 		BePrepared be = new BePrepared();
 		System.out.println("Cost for books:" + be.calculateOrder(1, 1));
 		System.out.println("Cost for books:" + be.calculateOrder(2, 1));
@@ -18,6 +19,7 @@ public class TesterACTS {
 		
 		System.out.println();
 		Stars stars = new Stars();
+		System.out.println("This pyramid has 5 rows:");
 		stars.printStars(5);
 		
 		System.out.println();
