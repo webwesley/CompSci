@@ -41,42 +41,42 @@ public class Go {
 	
 }
 
-class Action1 implements ActionListener {
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		JFrame frame = new JFrame("Choice 1");
-		frame.setVisible(true);
-		frame.setSize(600, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		JPanel panel = new JPanel();
-		frame.add(panel);
-		JLabel label = new JLabel("You picked 1");
-		frame.add(label);
-		
-	}
-}
-	
-class Action2 implements ActionListener {
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			JFrame frame = new JFrame("Choice 2");
-			frame.setVisible(true);
-			frame.setSize(600, 300);
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			
-			JPanel panel = new JPanel();
-			frame.add(panel);
-			JLabel label = new JLabel("You picked 2");
-			frame.add(label);
-			
-		}
-		
-	
-	
-	
-}
+//class Action1 implements ActionListener {
+//
+//	@Override
+//	public void actionPerformed(ActionEvent e) {
+//		// TODO Auto-generated method stub
+//		JFrame frame = new JFrame("Choice 1");
+//		frame.setVisible(true);
+//		frame.setSize(600, 300);
+//		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		
+//		JPanel panel = new JPanel();
+//		frame.add(panel);
+//		JLabel label = new JLabel("You picked 1");
+//		frame.add(label);
+//		
+//	}
+//}
+//	
+//class Action2 implements ActionListener {
+//
+//		@Override
+//		public void actionPerformed(ActionEvent e) {
+//			// TODO Auto-generated method stub
+//			JFrame frame = new JFrame("Choice 2");
+//			frame.setVisible(true);
+//			frame.setSize(600, 300);
+//			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//			
+//			JPanel panel = new JPanel();
+//			frame.add(panel);
+//			JLabel label = new JLabel("You picked 2");
+//			frame.add(label);
+//			
+//		}
+//		
+//	
+//	
+//	
+//}
