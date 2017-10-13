@@ -47,6 +47,7 @@ public class ChoseYourOwnAdventure {
 	}
 
 	public ChoseYourOwnAdventure(String text, String name) {
+		this.text = text;
 		this.name = name;
 		this.frame = new JFrame("James Howard's Space Adventure");
 		frame.setVisible(false);
@@ -102,8 +103,22 @@ public class ChoseYourOwnAdventure {
 
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			ChoseYourOwnAdventure tmp = new ChoseYourOwnAdventure(ChoseYourOwnAdventure.this.choice1);
+			try {
+				ChoseYourOwnAdventure tmp = new ChoseYourOwnAdventure(ChoseYourOwnAdventure.this.choice1);
 			tmp.draw();
+			} catch(NullPointerException e1) {
+				JFrame frame = new JFrame();
+				frame.setVisible(true);
+				frame.setSize(400, 400);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				JPanel panel = new JPanel();
+				panel.setLayout(new GridLayout(3, 2));
+				frame.add(panel);
+				JLabel text = new JLabel(ChoseYourOwnAdventure.this.choice1.text);
+				
+				panel.add(text);
+				
+			}
 		}
 
 	}
@@ -112,9 +127,22 @@ public class ChoseYourOwnAdventure {
 
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			ChoseYourOwnAdventure tmp = new ChoseYourOwnAdventure(ChoseYourOwnAdventure.this.choice2);
+			try {
+				ChoseYourOwnAdventure tmp = new ChoseYourOwnAdventure(ChoseYourOwnAdventure.this.choice2);
 			tmp.draw();
-
+			} catch(NullPointerException e1) {
+				JFrame frame = new JFrame();
+				frame.setVisible(true);
+				frame.setSize(400, 400);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				JPanel panel = new JPanel();
+				panel.setLayout(new GridLayout(3, 2));
+				frame.add(panel);
+				JLabel text = new JLabel(ChoseYourOwnAdventure.this.choice2.text);
+				
+				panel.add(text);
+				
+			}
 		}
 
 	}

@@ -7,7 +7,7 @@ public class LipogramAnalyzer {
 	String text;
 	
 	public LipogramAnalyzer(String text) {
-		this.text =  " " + text + " ";
+		this.text =  " " + text.toLowerCase() + " ";
 	}
 
 	public String mark(char letter) {
@@ -16,11 +16,10 @@ public class LipogramAnalyzer {
 	
 	public String allWordsWith(char letter) {
 		String offended = "";
-		int tmp4 = text.length();
+		
 		int startIndex = 1;
 		while(startIndex > 0) {
 			String tmp = findWord(letter, startIndex);
-			boolean tmp1 = offended.contains(tmp);
 			if(!offended.contains(tmp) && tmp .trim() != "") {
 			offended = offended.concat(tmp);
 			offended = offended.concat("\n");
@@ -42,14 +41,14 @@ public class LipogramAnalyzer {
 		}
 		int start = index;
 		int end = index;
-		int tmp1 = text.length();
+		
 		while(text.charAt(start) != ' ') {
 			start--;
 		}
 		while(text.charAt(end) != ' ') {
 			end++;
 		}
-		String tmp = text.substring(start + 1, end);
+		
 		return text.substring(start + 1, end);
 	}
 }

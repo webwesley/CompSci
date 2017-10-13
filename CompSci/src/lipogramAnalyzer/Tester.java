@@ -15,7 +15,7 @@ public class Tester {
 				"common in English being e");
 		
 		System.out.println("This is the method marking all the i with #: \n\n" + lip.mark('i') + "\n");
-		System.out.println("This is a string with all offending words that contain the letter i: \n\n" + lip.allWordsWith('i'));
+		System.out.println("This is a string with all offending words that contain the letter o: \n\n" + lip.allWordsWith('o'));
 	}
 	
 
