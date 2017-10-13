@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.JTextArea;
 import javax.swing.JPanel;
 
 public class ChoseYourOwnAdventure {
@@ -26,14 +26,15 @@ public class ChoseYourOwnAdventure {
 		} 
 		this.frame = new JFrame("James Howard's Space Adventure");
 		frame.setVisible(false);
-		frame.setSize(400, 400);
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
 		frame.add(panel);
 		panel.setLayout(new GridLayout(3, 2));
 
-		JLabel setting = new JLabel(this.text);
+		JTextArea setting = new JTextArea(this.text);
+		setting.setLineWrap(true);
 		panel.add(setting);
 
 		JButton pick1 = new JButton(this.choice1.name);
@@ -51,7 +52,7 @@ public class ChoseYourOwnAdventure {
 		this.name = name;
 		this.frame = new JFrame("James Howard's Space Adventure");
 		frame.setVisible(false);
-		frame.setSize(400, 400);
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// creates the pannelclass Action1 extends ActionListener()
@@ -60,7 +61,8 @@ public class ChoseYourOwnAdventure {
 		frame.add(panel);
 
 		panel.setLayout(new FlowLayout());
-		JLabel setting = new JLabel(text);
+		JTextArea setting = new JTextArea(text);
+		setting.setLineWrap(true);
 		panel.add(setting);
 	}
 
@@ -72,7 +74,7 @@ public class ChoseYourOwnAdventure {
 		this.choice2 = choice2;
 		this.frame = new JFrame("James Howard's Space Adventure");
 		frame.setVisible(false);
-		frame.setSize(400, 400);
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// creates the pannel
@@ -81,7 +83,8 @@ public class ChoseYourOwnAdventure {
 		frame.add(panel);
 		panel.setLayout(new GridLayout(3, 2));
 
-		JLabel setting = new JLabel(this.text);
+		JTextArea setting = new JTextArea(this.text);
+		setting.setLineWrap(true);
 		panel.add(setting);
 
 		JButton pick1 = new JButton(this.choice1.name);
@@ -109,12 +112,13 @@ public class ChoseYourOwnAdventure {
 			} catch(NullPointerException e1) {
 				JFrame frame = new JFrame();
 				frame.setVisible(true);
-				frame.setSize(400, 400);
+				frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				JPanel panel = new JPanel();
 				panel.setLayout(new GridLayout(3, 2));
 				frame.add(panel);
-				JLabel text = new JLabel(ChoseYourOwnAdventure.this.choice1.text);
+				JTextArea text = new JTextArea(ChoseYourOwnAdventure.this.choice1.text);
+				text.setLineWrap(true);
 				
 				panel.add(text);
 				
@@ -133,12 +137,13 @@ public class ChoseYourOwnAdventure {
 			} catch(NullPointerException e1) {
 				JFrame frame = new JFrame();
 				frame.setVisible(true);
-				frame.setSize(400, 400);
+				frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				JPanel panel = new JPanel();
 				panel.setLayout(new GridLayout(3, 2));
 				frame.add(panel);
-				JLabel text = new JLabel(ChoseYourOwnAdventure.this.choice2.text);
+				JTextArea text = new JTextArea(ChoseYourOwnAdventure.this.choice2.text);
+				text.setLineWrap(true);
 				
 				panel.add(text);
 				
