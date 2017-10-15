@@ -10,6 +10,9 @@ import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.JPanel;
 
+
+//This class allows for each "Choose Your own Adventure choice" to have a name, the text it displays, as well as the two choices that it can lead to. In the 
+//event that it is the end of the line, the choice's can be left blank, terminating any further choosing
 public class ChoseYourOwnAdventure {
 	String name;
 	String text;
