@@ -10,23 +10,35 @@ public class Words {
 		sorted = sort(initial);
 	}
 
-	private String sort(String word) {
- 		String a = "";
+	private String sort(String word) { // implements a quicksort algorithm
+		String a = "";
 		String b = "";
+		char pivotChar;
 		if (word.length() > 1) {
-			int partition = word.length() - 1;
-			b += word.charAt(partition);
+			int pivot = word.length() - 1;
+			pivotChar = word.charAt(pivot);
 			for (int i = 0; i < word.length() - 1; i++) {
-				if (word.charAt(i) < word.charAt(partition)) {
-					a += word.substring(i, i + 1);
+				if (word.charAt(i) < word.charAt(pivot)) {
+					a += word.charAt(i);
 				} else {
-					b += word.substring(i, i + 1);
+					b += word.charAt(i);
 				}
 			}
-
-			sort(a);
-			sort(b);
+			return sort(a) + pivotChar + sort(b);
 		}
-		return a + b;
+		return word;
+
 	}
+
+	public boolean isAnagram(String word) {
+		return(this.sorted.equals(sort(word)));
+	}
+
+	@Override
+	public String toString() {
+		return "Words [initial=" + initial + ", sorted=" + sorted + "]";
+	}
+	
+	
+
 }

@@ -19,13 +19,14 @@ class WordList {
 		this.size = size;
 		this.file = new File(filename);
 		try {
-			words = new String[size];
+			words = new String[2000];
 			Scanner input = new Scanner(file);
 
-			for (int i = 0; i < size; i++) {
+			for (int i = 0; i < size; i++) { //set array size here?
 				if (input.hasNextLine()) {
-					words[i] = input.nextLine();
-					
+					if (input.nextLine().length() <= size) {
+						words[i] = input.nextLine();
+					}
 				}
 			}
 			input.close();
@@ -38,10 +39,10 @@ class WordList {
 	}
 }
 
-//class test {
-//	public static void main(String[] args) {
-//		WordList test = new WordList();
-//		System.out.println(Arrays.toString(test.words));
+// class test {
+// public static void main(String[] args) {
+// WordList test = new WordList();
+// System.out.println(Arrays.toString(test.words));
 //
-//	}
-//}
+// }
+// }
