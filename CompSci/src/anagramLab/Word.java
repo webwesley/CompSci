@@ -1,11 +1,11 @@
 package anagramLab;
 
-public class Words {
+public class Word {
 
 	String initial;
 	String sorted;
 
-	public Words(String word) {
+	public Word(String word) {
 		this.initial = word.toLowerCase();
 		sorted = sort(initial);
 	}
