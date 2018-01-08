@@ -15,6 +15,7 @@ public class FortuneCookie {
 	private void makeNum() {
 		Random num = new Random();
 		for(int i = 0; i < 6; i++) {
+			if()
 			luckyNum[i] = num.nextInt(100); 
 		}
 	}

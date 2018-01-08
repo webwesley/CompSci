@@ -1,5 +1,6 @@
 package anagramLab;
 
+//holds one word.  It will contain the word, and a string that holds the word with its characters sorted in alphabetical order.  
 public class Word {
 
 	String initial;

@@ -16,18 +16,21 @@ public class Tester {
 		int size = input.nextInt();
 		input.reset();
 		WordList wordList = new WordList(filename, size);
-		while (true) {
+		while (true) { //while loop keeps it going until the user inputs finish
 			System.out.print("Enter a word: ");
 			Word word = new Word(input.next());
 			if (word.initial.equals("finish")) {
-				System.out.println("\n Thank You For Your Time");
+				System.out.println("\nThank You For Your Time");
 				break;
 			}
-			System.out.println("\n" + Arrays.toString(wordList.findAnagrams(word).toArray()));
+			System.out.println("Anagrams:" + Arrays.toString(wordList.findAnagrams(word).toArray()));
 
 		}
 		input.close();
+		System.out.println("The word banna was added to the word list");
+		wordList.addWord("Banna");
 	}
+	
 
 
 }
