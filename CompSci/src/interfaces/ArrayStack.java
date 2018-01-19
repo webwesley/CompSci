@@ -1,5 +1,8 @@
 package interfaces;
 
+import java.util.Arrays;
+import java.util.EmptyStackException;
+
 public class ArrayStack<E> implements Stack<E> {
 
 	private Object[] stk;
@@ -7,6 +10,8 @@ public class ArrayStack<E> implements Stack<E> {
 
 	public ArrayStack() {
 		stk = new Object[10];
+		size = 0;
+		
 	}
 
 	@Override
@@ -15,21 +20,37 @@ public class ArrayStack<E> implements Stack<E> {
 	}
 
 	@Override
-	public void push(E x) {
-		// TODO Auto-generated method stub
-
+	public void push(E x) throws EmptyStackException {
+		if (isEmpty()) {
+			throw new EmptyStackException();
+		}
+		if(size == stk.length) {
+			stk = Arrays.copyOf(stk, 2*size);
+		}
+		stk[size] = x;
+		size++;
 	}
 
+
+	@SuppressWarnings("unchecked")
 	@Override
-	public E pop() {
-		// TODO Auto-generated method stub
-		return null;
+	public E pop() throws EmptyStackException {
+		if(this.isEmpty()) {
+			throw new EmptyStackException();
+		}
+		E tmp = (E) stk[size];
+		size--;
+		return tmp;
+		
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public E peekTop() {
-		// TODO Auto-generated method stub
-		return null;
+		if(this.isEmpty()) {
+			throw new EmptyStackException();
+		}
+		return (E) stk[size];
 	}
 
 }
