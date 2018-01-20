@@ -20,10 +20,7 @@ public class ArrayStack<E> implements Stack<E> {
 	}
 
 	@Override
-	public void push(E x) throws EmptyStackException {
-		if (isEmpty()) {
-			throw new EmptyStackException();
-		}
+	public void push(E x) {
 		if(size == stk.length) {
 			stk = Arrays.copyOf(stk, 2*size);
 		}
@@ -38,8 +35,8 @@ public class ArrayStack<E> implements Stack<E> {
 		if(this.isEmpty()) {
 			throw new EmptyStackException();
 		}
-		E tmp = (E) stk[size];
 		size--;
+		E tmp = (E) stk[size];
 		return tmp;
 		
 	}
@@ -50,7 +47,7 @@ public class ArrayStack<E> implements Stack<E> {
 		if(this.isEmpty()) {
 			throw new EmptyStackException();
 		}
-		return (E) stk[size];
+		return (E) stk[size - 1];
 	}
 
 }
