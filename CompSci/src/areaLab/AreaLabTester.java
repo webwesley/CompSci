@@ -8,9 +8,9 @@ public class AreaLabTester {
 		PolygonArea test = new PolygonArea();
 		ArrayList<Integer[]> testPoints = new ArrayList<Integer[]>();
 		Integer[] point1 = {0, 0};
-		Integer[] point2 = {2, 0};
-		Integer[] point3 = {2, 2};
-		Integer[] point4 = {0, 2};
+		Integer[] point2 = {4, 0};
+		Integer[] point3 = {4, 4};
+		Integer[] point4 = {0, 4};
 		testPoints.add(point1);
 		testPoints.add(point2);
 		testPoints.add(point3);

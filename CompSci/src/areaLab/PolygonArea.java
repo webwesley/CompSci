@@ -23,7 +23,7 @@ public class PolygonArea {
 	}
 	
 	private double getTriangleArea(double x1, double y1, double x2, double y2, double x3, double y3) {
-		double tmp =  Math.abs((x1 * (y2 - y3) + (x2 * (y3 - y1)) + (x3 * (y1 - y2)) / 2)); 
+		double tmp =  Math.abs(x1 * (y2 - y3) + (x2 * (y3 - y1)) + (x3 * (y1 - y2))) / 2; 
 		return tmp;
 	}
 	

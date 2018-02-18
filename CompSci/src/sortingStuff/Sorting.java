@@ -4,8 +4,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Sorting<E extends Comparable<E>> {
+	int iterations;
 	
-	public Sorting() {}
+	public Sorting() {
+		this.iterations = 0;
+	}
+	
+	public void resetIterations() {
+		this.iterations = 0;
+	}
 	
 	
 	public E[] selectionSort(E[] array) {
@@ -48,29 +55,70 @@ public class Sorting<E extends Comparable<E>> {
 	
 	@SuppressWarnings("unchecked")
 	
-	public E[] quicksort(E[] unsorted) {
+	public Integer[] quickSort(Integer[] unsorted) {
+		iterations++;
 		if(unsorted.length <= 1) {
 			return unsorted;
 		}
-		E pivot = (E) unsorted[unsorted.length - 1];
-		ArrayList<E> larger =  new ArrayList<E>();
-		ArrayList<E> smaller = new ArrayList<E>();
+		Integer pivot = unsorted[unsorted.length - 1];
+		ArrayList<Integer> larger =  new ArrayList<Integer>();
+		ArrayList<Integer> smaller = new ArrayList<Integer>();
 		for(int i = 0; i < unsorted.length - 1; i++) {
 			if(unsorted[i].compareTo(pivot) < 0) {
 				smaller.add(unsorted[i]);
+				continue;
 			}
 			if(unsorted[i].compareTo(pivot) >= 0) {
 				larger.add(unsorted[i]);
 			}
 		}
-		ArrayList<E> sorted = new ArrayList<E>();
-		E[] smallerArr = (E[]) new Object[smaller.size()];
+		Integer[] smallerArr = new Integer[smaller.size()];
 		smaller.toArray(smallerArr);
-		E[] largerArr = (E[]) new Object[smaller.size()];
-		smaller.toArray(largerArr);
+		Integer[] largerArr = new Integer[larger.size()];
+		larger.toArray(largerArr);
+		Integer[] tmp = {pivot};
+		return concat(concat(quickSort(smallerArr), tmp),  quickSort(largerArr));
 		
-		sorted.addAll(quicksort(smallerArr));
 		
+	}
+	
+	public E[] quickSortWithPointers(E[] array, int low, int high) {
+		if(low < high) {
+			int p = partition(array, low, high);
+			
+		}
+		
+		
+		quickSortWithPointers(tmp1);
+		
+	}
+
+	private int partition(E[] array, int low, int high) {
+		E pivot = array[high];
+		int j = low - 1;
+		for(int i = low; i < high - 1; i++) {
+			if(array[j].compareTo(pivot) < 0) {
+				i += 1;
+				E tmp = array[i];
+				array[i] = array[j];
+				array[j] = tmp;
+			}
+		}
+		E tmp = array[j + 1];
+		array[j + 1] = array[high];
+		array[high] = tmp;
+	}
+
+	private Integer[] concat(Integer[] smallerArr, Integer[] largerArr) {
+		Integer[] tmp = new Integer[smallerArr.length + largerArr.length];
+		int index = smallerArr.length;
+		for(int i = 0; i < smallerArr.length; i++) {
+			tmp[i] = smallerArr[i];
+		}
+		for(int i = 0; i < largerArr.length; i++) {
+			tmp[index + i] = largerArr[i];
+		}
+		return tmp;
 	}
 }
 	
