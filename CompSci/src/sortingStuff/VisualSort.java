@@ -33,15 +33,16 @@ public class VisualSort extends JPanel implements ActionListener {
 		System.out.println(Arrays.toString(array));
 		int width = this.getWidth() / array.length;
 		int x = 0;
-		int y = this.getHeight();
+		int height = this.getHeight();
 		for(int i = 0; i < array.length; i++) {
 			if(i % 2 == 0) {
 				g.setColor(Color.GREEN);
 			} else {
 				g.setColor(Color.RED);
 			}
-			g.fillRect(x, y, width, array[i]);
-			System.out.println("Printed Rect at " + x + "," + y.);
+			g.fillRect(x, height - array[i], width, height);
+			System.out.println("Printed Rect at " + x + "," + "Width: " + width + "Height: " + height );
+			x += width;
 		}
 		
 	}
