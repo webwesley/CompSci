@@ -14,9 +14,11 @@ public class VisualSort extends JPanel implements ActionListener {
 
 	Integer[] array;
 	Timer time;
+	int resizeFactor; //just something so i can keep testing small numbers but get larger boxes
 	
 	public VisualSort(Integer[] array) {
 		this.array = array;
+		resizeFactor = 15;
 		time = new Timer(1000, this);
 		time.start();
 	}
@@ -24,7 +26,6 @@ public class VisualSort extends JPanel implements ActionListener {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		paintRectangles(this.array, g);
-		g.drawRect(5, 5, 5, 5);
 	}
 	
 	
@@ -40,8 +41,10 @@ public class VisualSort extends JPanel implements ActionListener {
 			} else {
 				g.setColor(Color.RED);
 			}
-			g.fillRect(x, height - array[i], width, height);
-			System.out.println("Printed Rect at " + x + "," + "Width: " + width + "Height: " + height );
+			int bottomY = height;
+			int topY = height - this.resizeFactor * array[i];
+			g.fillRect(x, topY, width, bottomY);
+			System.out.println("Printed Rect at " + x + "," + " Width: " + width + "Height: " + height );
 			x += width;
 		}
 		
@@ -60,7 +63,7 @@ public class VisualSort extends JPanel implements ActionListener {
 						int tmp = array[j];
 						array[j] = array[j+1];
 						array[j+1] = tmp;
-						repaint();
+						this.repaint();
 						return;
 					}
 				}
@@ -68,7 +71,7 @@ public class VisualSort extends JPanel implements ActionListener {
 					time.stop();
 				}
 			}
-			time.stop();
+
 		
 	}
 	
