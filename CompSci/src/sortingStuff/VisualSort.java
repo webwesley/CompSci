@@ -3,16 +3,15 @@ package sortingStuff;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.Collections;
-import java.util.Random;
+
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.Timer;
+
 
 public class VisualSort extends JPanel {
 
@@ -55,8 +54,6 @@ public class VisualSort extends JPanel {
 				int topY = height - this.resizeFactor * array[i];
 				g.fillRect(x, topY, width, bottomY);
 			}
-			
-			//System.out.println("Printed Rect at " + x + "," + " Width: " + width + "Height: " + height );
 			x += width;
 		}
 		
@@ -112,6 +109,7 @@ public class VisualSort extends JPanel {
 			for(int j = 0; j < numbers.get(i).size(); j++) {
 				array[index] = numbers.get(i).get(j);
 				index++;
+				pointer = index; //this is here just to make the integer being compared red. 
 				try {
 					Thread.sleep(10);
 				} catch (InterruptedException e1) {
@@ -145,18 +143,18 @@ public class VisualSort extends JPanel {
 	
 	public static void main(String[] args) {
 		int iterations = 500;
-		Integer[] testArray = (Integer[]) makeTestArray(iterations, 100).toArray(new Integer[iterations]);
+		Integer[] testArray = (Integer[]) makeTestArray(iterations).toArray(new Integer[iterations]);
 		VisualSort test = new VisualSort((Integer[]) testArray);
 		JFrame frame = new JFrame();
-		frame.setTitle("Test Stuff");
-		frame.setSize(1500, 700);
+		frame.setTitle("Visualizing Sort");
+		frame.setSize(2000, 1030); //the extra 30 accounts for the title bar
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(test);
 		frame.setVisible(true);
 		test.radixSort();
 	}
 
-	private static ArrayList<Integer> makeTestArray(int iterations, int range) {
+	private static ArrayList<Integer> makeTestArray(int iterations) {
 		ArrayList<Integer> tmp = new ArrayList<Integer>();
 		for(int i = 0; i < iterations; i++) {
 			tmp.add(i);
