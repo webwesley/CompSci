@@ -13,7 +13,8 @@ public class Manager extends Employee {
 
 	@Override
 	public String toString() {
-		return "Manager [employees=" + employees + "]";
+		
+		return super.toString() + ", Manager [employees=" + employees + "]";
 	}
 
 	public ArrayList<Employee> getEmployees() {
@@ -28,5 +29,10 @@ public class Manager extends Employee {
 		this.employees.add(employee);
 	}
 	
+	public void printEmployees () {
+		for(int i = 0; i < employees.size(); i++) {
+			System.out.print(employees.get(i).getName());
+		}
+	}
 
 }

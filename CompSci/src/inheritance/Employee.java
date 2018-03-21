@@ -15,7 +15,16 @@ public class Employee extends Person {
 
 	@Override
 	public String toString() {
-		return "Employee [salery=" + salery + ", manager=" + manager + ", password=" + password + "]";
+	
+		return 	super.toString() + ", Employee [salery=" + salery + ", manager=" + getManagerName() + ", password=" + password + "]";
+	}
+
+	public String getManagerName() {
+		try {
+			return getManager().getName();
+		} catch(NullPointerException e) {
+			return "Does not Have Manger";
+		}
 	}
 
 	public int getSalery() {
