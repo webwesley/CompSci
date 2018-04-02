@@ -12,7 +12,7 @@ public class EmployeeSystem {
 	String currentEmployee;
 	HashMap<String, Employee> logins;
 
-	private void run() {
+	private void run() { //runs everything... as impiled by the name run
 		String action = "";
 		while (!action.equals("exit")) {
 			if (logins.get(currentEmployee) instanceof Manager) {
@@ -31,7 +31,7 @@ public class EmployeeSystem {
 
 	}
 
-	private void managerAction(String action) {
+	private void managerAction(String action) { //actions for manager, as implied by the title
 		if (action.contains("add")) {
 			addEmployee();
 		} else if (action.contains("print")) {
@@ -45,7 +45,7 @@ public class EmployeeSystem {
 		}
 	}
 
-	private void employeeRaise() {
+	private void employeeRaise() { //gives employee rasie 
 		String userNameTmp = "";
 		while (!(logins.containsKey(userNameTmp)
 				&& logins.get(userNameTmp).getManager().equals(logins.get(currentEmployee)))) {
@@ -57,7 +57,7 @@ public class EmployeeSystem {
 		logins.get(userNameTmp).setSalery(saleryTmp);
 	}
 
-	private void fireEmployee() {
+	private void fireEmployee() { //fires employee
 		String userNameTmp = "";
 		while (!(logins.containsKey(userNameTmp)
 				&& logins.get(userNameTmp).getManager().equals(logins.get(currentEmployee)))) {
@@ -69,7 +69,7 @@ public class EmployeeSystem {
 		((Manager) logins.get(currentEmployee)).printEmployees();
 	}
 
-	private void printEmployeeInfo() {
+	private void printEmployeeInfo() { //prints employee info
 		String userNameTmp = "";
 		while (!(logins.containsKey(userNameTmp)
 				&& logins.get(userNameTmp).getManager().equals(logins.get(currentEmployee)))) {
@@ -79,7 +79,7 @@ public class EmployeeSystem {
 		logins.get(userNameTmp).toString();
 	}
 
-	private void addEmployee() {
+	private void addEmployee() { // addes an employee
 		System.out.print("Name:");
 		String name = input.nextLine();
 		System.out.print("Id:");
@@ -97,7 +97,7 @@ public class EmployeeSystem {
 						+ ((Manager) logins.get(currentEmployee)).getEmployees() + "\n");
 	}
 
-	private void employeeAction(String action) {
+	private void employeeAction(String action) { //actions for employees, and implied by the title
 		if (action.contains("salery")) {
 			System.out.println(logins.get(currentEmployee).getName() + ", your salery is:$"
 					+ logins.get(currentEmployee).getSalery());
@@ -113,7 +113,7 @@ public class EmployeeSystem {
 		}
 	}
 
-	private void login() {
+	private void login() { //login system, as implied by the titrle
 		for (int i = 0; i < employees.size(); i++) {
 			logins.put(employees.get(i).getId(), employees.get(i));
 		}

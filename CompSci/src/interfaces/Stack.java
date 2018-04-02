@@ -25,4 +25,6 @@ public interface Stack<E> {
 	 */
 	
 	E peekTop();
+	
+	int size(); //retunrs the number of elemnts currently in the stack
 }

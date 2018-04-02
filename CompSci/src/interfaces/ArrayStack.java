@@ -13,12 +13,18 @@ public class ArrayStack<E> implements Stack<E> {
 		size = 0;
 		
 	}
+	
+	public ArrayStack(int size) {
+		stk = new Object[size];
+		this.size = 0;
+	}
 
 	@Override
 	public boolean isEmpty() {
 		return size == 0;
 	}
 
+	
 	@Override
 	public void push(E x) {
 		if(size == stk.length) {
@@ -50,4 +56,10 @@ public class ArrayStack<E> implements Stack<E> {
 		return (E) stk[size - 1];
 	}
 
+	@Override
+	public int size() {
+		return size;
+		}
+
+	
 }

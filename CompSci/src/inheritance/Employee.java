@@ -14,7 +14,7 @@ public class Employee extends Person {
 	}
 
 	@Override
-	public String toString() {
+	public String toString() { //to String, returns information about the manager
 	
 		return 	super.toString() + ", Employee [salery=" + salery + ", manager=" + getManagerName() + ", password=" + password + "]";
 	}

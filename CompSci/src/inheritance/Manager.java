@@ -12,7 +12,7 @@ public class Manager extends Employee {
 	}
 
 	@Override
-	public String toString() {
+	public String toString() { //prints out manager information
 		
 		return super.toString() + ", Manager [employees=" + employees + "]";
 	}

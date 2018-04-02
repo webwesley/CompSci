@@ -6,7 +6,7 @@ public class Person {
 	private int age; 
 	
 	@Override
-	public String toString() {
+	public String toString() { //prints out person informaiton
 		return "Person [name=" + name + ", id=" + id + ", age=" + age + "]";
 	}
 
