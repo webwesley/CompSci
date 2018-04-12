@@ -1,5 +1,7 @@
 package interfaces;
 
+import java.util.EmptyStackException;
+
 public interface Stack<E> {
 	
 	boolean isEmpty();
@@ -17,7 +19,7 @@ public interface Stack<E> {
 	 * postconditon: stack is [e1, e2, ..., e(n-1)]; returns en
 	 * exceptions: throws an unchecked exception if the stack is empty
 	 */
-	E pop();
+	E pop() throws EmptyStackException;
 	
 	/**
 	 * preconditi
