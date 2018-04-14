@@ -139,13 +139,7 @@ public class PostFixEvaluation extends ArrayStack<String> implements Comparable<
 	
 	@Override
 	public int compareTo(PostFixEvaluation o) {
-		if(this.answer - o.getAnswer() < 0) {
-			return -1;
-		} else if (this.answer - o.getAnswer() == 0) {
-			return 0;
-		} else {
-			return 1;
-		}
+		return (this.hashCode() - o.hashCode());
 	}
 
 	public static void main(String[] args) {
@@ -157,7 +151,9 @@ public class PostFixEvaluation extends ArrayStack<String> implements Comparable<
 		String infix = "5 * 2 / 6 + 3 - 6";
 		System.out.println("Original infix: " + infix);
 		System.out.println("Converted to postFix: " + test.infixToPostFix(infix));
- 
+		PostFixEvaluation test1 = new PostFixEvaluation("2 2 +");
+		System.out.println("Does this equals this: " + test.compareTo(test));
+		System.out.println("Does test1 equals this: " + test.compareTo(test1));
 	}
 
 }

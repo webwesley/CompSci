@@ -2,8 +2,6 @@ package linkedlist;
 
 import java.util.NoSuchElementException;
 
-@SuppressWarnings("unchecked")
-
 public class SinglyLinkedList<E> {
 
 	private ListNode<E> head;
@@ -80,6 +78,20 @@ public class SinglyLinkedList<E> {
 		}
 		ListNode<E> tmpNode = head;
 		for(int i = 0; i < nodeCount - 1; i++) {
+			tmpNode = tmpNode.getNext();
+		}
+		E tmp = tmpNode.getNext().getValue();
+		tmpNode.setReference(null);
+		nodeCount--;
+		return tmp;
+	}
+	
+	public E remove(int index, E value) {
+		if(index < 0 || index > nodeCount) {
+			throw new IndexOutOfBoundsException();
+		}
+		ListNode<E> tmpNode = head;
+		for(int i = 0; i < index - 1; i++) {
 			tmpNode = tmpNode.getNext();
 		}
 		E tmp = tmpNode.getNext().getValue();

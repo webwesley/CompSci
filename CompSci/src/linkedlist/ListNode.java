@@ -2,8 +2,8 @@ package linkedlist;
 
 public class ListNode<E> {
 
-	public E value;
-	public ListNode<E> reference;
+	private E value;
+	private ListNode<E> reference;
 	
 	public ListNode(E value) {
 		this.value = value;
@@ -31,7 +31,7 @@ public class ListNode<E> {
 		this.reference = reference;
 	}
 	
-	public boolean hasNext() {new york ginats
+	public boolean hasNext() {
 		return this.reference != null;
 	}
 	
