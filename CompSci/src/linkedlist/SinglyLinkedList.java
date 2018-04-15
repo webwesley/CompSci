@@ -11,6 +11,11 @@ public class SinglyLinkedList<E> {
 		head = null;
 		nodeCount = 0;
 	}
+	
+	public SinglyLinkedList(ListNode<E> head) {
+		this.head = head;
+		nodeCount = 1;
+	}
 
 	public int size() {
 		return nodeCount;
